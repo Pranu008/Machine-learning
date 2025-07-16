@@ -51,6 +51,7 @@ data %>%
 library (tidyverse)
 library(broom)
 library(modelr)
+library(plotly)
 
 read.csv("10_Property_stolen_and_recovered.csv") ->df
 view()
@@ -65,6 +66,6 @@ df %>%
     title = "Linear Regression Example (Tidyverse)",
     x = "Cases_Property_Stolen",
     y= "Cases_Property_Recovered"
-  )
-
+  )->df1
+ggplotly(df1)
 
